@@ -5,16 +5,16 @@
 
 <t:pagetemplate>
     <jsp:attribute name="header">
-         Welcome to the frontpage
+         Velkommen til Fogs Carpote
     </jsp:attribute>
 
     <jsp:attribute name="footer">
-        Welcome to the frontpage
+
     </jsp:attribute>
 
     <jsp:body>
 
-        <p>Startcode for 2nd semester </p>
+        <p>Log ind som bruger </p>
 
         <c:if test="${sessionScope.user != null}">
             <p>You are logged in with the role of "${sessionScope.user.role}".</p>
