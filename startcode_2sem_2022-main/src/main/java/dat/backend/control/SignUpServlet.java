@@ -54,7 +54,7 @@ public class SignUpServlet extends HttpServlet
             }
             //Creates our user object with the variables from our request.getParameter and set it to our
             //createUser method in UserFacade so that it gets created to our DB right away
-            User user = UserFacade.createUser(username, password, "Customer", connectionPool);
+            User user = UserFacade.createUser(username, password, "customer", connectionPool);
 
 
             //"user" = current user when logged in
