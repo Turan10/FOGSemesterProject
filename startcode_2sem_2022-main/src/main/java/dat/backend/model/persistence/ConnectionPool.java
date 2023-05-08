@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 
 public class ConnectionPool
 {
+    // TODO: Change access credentials for MySql server as needed below:
 
     private HikariDataSource ds;
     private static String USER = "dev";
