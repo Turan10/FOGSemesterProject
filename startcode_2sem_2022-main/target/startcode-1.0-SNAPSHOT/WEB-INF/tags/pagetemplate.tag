@@ -36,13 +36,14 @@
                     <a class="nav-item nav-link" href="${pageContext.request.contextPath}/">Page 2</a>
                     <a class="nav-item nav-link" href="${pageContext.request.contextPath}/">Page 3</a>
                     <c:if test="${sessionScope.user == null }">
-                        <!-- Button trigger modal -->
+
+                        <!-- Login button trigger modal -->
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal">
                             Login
                         </button>
 
-                        <!-- Modal -->
+                        <!-- Modal for login -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                              aria-hidden="true">
                             <div class="modal-dialog">
@@ -53,20 +54,50 @@
                                                 aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <h3>You can log in here</h3>
+                                        <h3>Log venligst ind for at fortsætte</h3>
                                         <form action="login" method="post">
-                                            <label for="username">Username: </label><br>
+                                            <label for="username">Brugernavn: </label><br>
                                             <input type="text" id="username" name="username"/><br>
-                                            <label for="password">Password: </label><br>
-                                            <input type="password" id="password" name="password"/>
-                                            <input type="submit"  value="Log in"/>
+                                            <label for="password">Adgangskode: </label><br>
+                                            <input type="password" id="password" name="password"/><br><br>
+                                            <input type="submit" class="btn btn-success" value="Log in"/>
                                         </form>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Opret
-                                            bruger
-                                        </button>
-                                        <button type="submit" value="Log in" class="btn btn-primary">Login</button>
+                                        <p>Har du ikke en bruger?</p>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#opretModal">Opret bruger</button>
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Luk</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal for opretbruger -->
+                        <div class="modal fade" id="opretModal" tabindex="-1" aria-labelledby="opretModal"
+                             aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="opretModalLabel">Opret bruger</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h3>Opret en bruger for at fortsætte</h3>
+                                        <form action="signup" method="post">
+                                            <div class="mb-3"><input class="form-control" type="text" name="username" placeholder="Brugernavn"></div>
+                                            <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Kodeord"></div>
+                                            <div class="mb-3"><input class="form-control" type="password" name="confirmpassword" placeholder="Gentag kodeord"></div>
+                                            <div class="mb-3"><button class="btn btn-success d-block w-100" type="submit">Opret profil</button></div>
+                                        </form>
+                                            ${sessionScope.passwordMismatch}
+                                            ${sessionScope.userExists}
+                                    </div>
+                                    <div class="modal-footer">
+                                        <p>Har du allerede en bruger?</p>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">Login</button>
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Luk</button>
                                     </div>
                                 </div>
                             </div>
