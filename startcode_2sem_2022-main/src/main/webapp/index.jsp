@@ -17,11 +17,11 @@
         <p>Log ind som bruger </p>
 
         <c:if test="${sessionScope.user != null}">
-            <p>You are logged in with the role of "${sessionScope.user.role}".</p>
+            <p>Du er logget ind med rollen som "Kunde" "${sessionScope.user.role}".</p>
         </c:if>
 
         <c:if test="${sessionScope.user == null}">
-            <p>You are not logged in yet. You can do it here: <a
+            <p>Du er ikke logget ind endnu. Du kan logge ind her  <a
                     href="login.jsp">Login</a></p>
         </c:if>
 
