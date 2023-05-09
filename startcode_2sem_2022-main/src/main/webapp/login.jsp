@@ -25,5 +25,9 @@
             <input type="submit"  value="Log in"/>
         </form>
 
+        <a href="signup.jsp">Har du ikke en profil? Opret en her</a>
+
+
+
     </jsp:body>
 </t:pagetemplate>
